@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.material.icons.filled.ArrowBack
@@ -44,12 +45,12 @@ fun StudentScreen(
                 popUpTo("dashboard") { inclusive = true }
             } }) {
                 Icon(
-                    imageVector = Icons.Default.ArrowBack,
+                    imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                     contentDescription = "Zurück zum Dashboard"
                 )
             }
             Text(
-                text = "Studentenliste",
+                text = "Studierendenregister",
                 style = MaterialTheme.typography.titleLarge
             )
         }
@@ -80,23 +81,11 @@ fun StudentScreen(
             },
             modifier = Modifier.fillMaxWidth()
         ) {
-            Text("Neuen Studenten anlegen")
+            Text("Eintrag anlegen",
+                style = MaterialTheme.typography.titleLarge)
         }
 
         Spacer(modifier = Modifier.height(16.dp))
-
-        Button(
-            onClick = {
-                if (studentController.exportDatabase()) {
-                    android.util.Log.d("StudentScreen", "Datenbank erfolgreich exportiert.")
-                } else {
-                    android.util.Log.e("StudentScreen", "Export der Datenbank fehlgeschlagen.")
-                }
-            },
-            modifier = Modifier.fillMaxWidth()
-        ) {
-            Text("Datenbank exportieren")
-        }
     }
 
     if (showEditDialog) {
@@ -154,8 +143,8 @@ fun ExpandableStudentCard(
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Text(
-                    text = "Matrikelnummer: ${student.matnumber}",
-                    style = MaterialTheme.typography.titleMedium
+                    text = "${student.matnumber}",
+                    style = MaterialTheme.typography.titleLarge
                 )
                 IconButton(onClick = { expanded = !expanded }) {
                     Icon(
@@ -172,9 +161,9 @@ fun ExpandableStudentCard(
                         .padding(top = 8.dp)
                 ) {
                     Text("${student.firstname} ${student.lastname}",
-                        style = MaterialTheme.typography.bodyLarge)
-                    Text("Email: ${student.email}",
-                        style = MaterialTheme.typography.bodyMedium)
+                        style = MaterialTheme.typography.titleLarge)
+                    Text("${student.email}",
+                        style = MaterialTheme.typography.titleLarge)
 
                     Spacer(modifier = Modifier.height(8.dp))
 
@@ -204,7 +193,7 @@ fun EditStudentDialog(
     AlertDialog(
         onDismissRequest = onDismiss,
         title = {
-            Text(text = if (student == null) "Neuen Studenten anlegen" else "Student bearbeiten")
+            Text(text = if (student == null) "Neuen Eintrag anlegen" else "Eintrag bearbeiten")
         },
         text = {
             Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {

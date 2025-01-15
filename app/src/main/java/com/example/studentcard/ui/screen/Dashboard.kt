@@ -7,6 +7,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -26,14 +27,9 @@ fun Dashboard() {
                 verticalArrangement = Arrangement.Center
             ) {
                 Button(onClick = { navController.navigate("student_screen") }) {
-                    Text("Studierenden anlegen")
+                    Text("Register", fontSize = 24.sp)
                 }
                 Spacer(modifier = Modifier.height(16.dp))
-                Button(onClick = {
-                    StudentController(context).exportDatabase()
-                }) {
-                    Text("Datenbank exportieren")
-                }
             }
         }
         composable("student_screen") {
