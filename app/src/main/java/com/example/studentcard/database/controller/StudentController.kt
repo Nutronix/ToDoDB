@@ -90,25 +90,5 @@ class StudentController(context: Context) {
         }
         return students
     }
-    fun exportDatabase(): Boolean {
-        val dbPath = dbHelper.context.getDatabasePath(DbHelper.DATABASE_NAME).absolutePath
-        val exportPath = File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), DbHelper.DATABASE_NAME)
 
-        return try {
-            FileInputStream(dbPath).use { input ->
-                FileOutputStream(exportPath).use { output ->
-                    input.copyTo(output)
-                }
-            }
-            // Debug-Logs hinzufügen
-            android.util.Log.d("StudentController", "Source DB size: ${File(dbPath).length()} bytes")
-            android.util.Log.d("StudentController", "Exported DB size: ${exportPath.length()} bytes")
-            android.util.Log.d("StudentController", "Database exported to: ${exportPath.absolutePath}")
-            true
-        } catch (e: Exception) {
-            android.util.Log.e("StudentController", "Export failed", e)
-            e.printStackTrace()
-            false
-        }
-    }
 }
