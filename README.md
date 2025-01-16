@@ -50,11 +50,12 @@ Die App demonstriert:
 
 # ToDo App - Abgabeprojekt
 
-Diese App dient als Abgabeprojekt zur Demonstration von Jetpack Compose und SQLite-Datenbankanbindung in Android.
+Diese App dient als Abgabeprojekt zur Demonstration von SQLite-Datenbankanbindung in Android.
 
 ## Aufgabenbeschreibung
 
 Entwickeln Sie eine ToDo-App mit folgender Funktionalität:
+
 
 ### Dashboard
 - Zwei Hauptansichten:
@@ -67,6 +68,7 @@ Entwickeln Sie eine ToDo-App mit folgender Funktionalität:
 - "+" Button zum Hinzufügen neuer ToDos
 - Bearbeiten-Button auf jeder ToDo-Card
 - Erledigte ToDos werden separat mit Erledigungs-Markierung angezeigt
+- ToDo´s sollen gelöscht werden können 
 
 ### ToDo-Attribute
 Ein ToDo besteht aus:
@@ -85,7 +87,7 @@ Ein ToDo besteht aus:
 ## Bewertung (100 Punkte)
 
 ### 1. Formale Anforderungen (10 Punkte)
-- Fristgerechte Abgabe via GitHub Repository (10P)
+- Formal korrekte Abgabe via GitHub Repository (10P)
 
 ### 2. Datenbank (20 Punkte)
 - Tabellenstruktur (5P)
