@@ -1,3 +1,4 @@
+/*
 package com.example.studentcard.database.controller
 
 import android.content.ContentValues
@@ -90,5 +91,5 @@ class StudentController(context: Context) {
         }
         return students
     }
-
 }
+ */

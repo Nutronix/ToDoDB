@@ -1,3 +1,4 @@
+/*
 package com.example.studentcard.ui.screen
 
 import android.content.Context
@@ -245,3 +246,5 @@ fun EditStudentDialog(
         }
     )
 }
+
+ */
